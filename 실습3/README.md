@@ -12,6 +12,23 @@
            mode: 0755
            recurse: yes
    ```
+- 혹은 ```ansible-playbook file.yml``` 실행과 동시에 디렉터리 생성 원할 시
+  ```bash
+  ---
+  - name: "File Module"
+    hosts: local
+    tasks:
+      - name: "make directory dirA"
+        file:
+          path: "/home/kimsewon/tmp"
+          state: directory
+
+      - name: "Mode 755"
+        file:
+          path: "/home/kimsewon/tmp"
+          mode: 0755
+          recurse: yes
+  ```
 
 3. 디렉터리 생성
    ```bash

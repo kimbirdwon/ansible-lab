@@ -26,11 +26,17 @@
 
    [aws]
    aws1 ansible_host=43.200.175.153 ansible_user=ubuntu ansible_ssh_private_key_file=kim-key.pem
+   ```
+   - ansible_host=EC2 퍼블릭 IP 주소
 
 6. 키페어 복사
+   ```bash
+   cp "/mnt/c/Users/k-com/Downloads/kim-key.pem" ./
+   chmod 400 kim-key.pem
+   ```
 
-7. ```ansible aws -m ping```
+8. ```ansible aws -m ping```
 
-8. ```vi lemp.yml```
+9. ```vi lemp.yml```
 
-9. ```ansible-playbook lemp.yml --ask-become-pass```
+10. ```ansible-playbook lemp.yml --ask-become-pass```
